@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Feedback Page</title>
+    <style>
+        body { 
+			font-family: Arial, sans-serif; 
+			background-color: #f4f4f4;
+			 display: flex; 
+			 justify-content: center;
+			  align-items: center; 
+			  height: 100vh; margin: 0;
+		   }
+        .feedback-card { 
+			background: white;
+			 padding: 25px; 
+			 border-radius: 10px; 
+			 box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+			  width: 400px; 
+			  text-align: center; 
+		  }
+        
+    </style>
+</head>
+<body>
+
+	<body>
+
+	    <div class="feedback-card">
+	        <h2>Feedback</h2> 
+	        <div class="btn-group">
+	            <button class="btn-toggle active">Add Feedback</button>
+	        </div>
+
+	       <form th:action="@{/api/feedback/add}" method="post">
+	            <span class="label-text">Your Feedback</span> 
+	            <textarea name="feedbackText" placeholder="Write your feedback here..." required></textarea> 
+	            <br><br>
+	            <button type="submit" class="submit-btn">Submit</button> 
+	        </form>
+
+	        <br>
+	        <a th:href="@{/api/feedback/admin}" style="font-size: 12px; color: gray;">Go to Admin View</a>
+	    </div>
+
+	</body>
+</body>
+</html>
